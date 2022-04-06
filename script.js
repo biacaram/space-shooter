@@ -161,5 +161,3 @@ function gameOver() {
         instructionsText.style.display = 'block';
     });
 }
-
-window.addEventListener('keydown', flyShip);
