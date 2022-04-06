@@ -54,7 +54,7 @@ function createLaserElement() {
     let xPosition = parseInt(window.getComputedStyle(yourShip).getPropertyValue('left'));
     let yPosition = parseInt(window.getComputedStyle(yourShip).getPropertyValue('top'));
     let newLaser = document.createElement('img');
-    newLaser.src = 'img/shoot.png';
+    newLaser.src = 'img/shot2.png';
     newLaser.classList.add('laser');
     newLaser.style.left = `${xPosition}px`;
     newLaser.style.top = `${yPosition - 10}px`;
@@ -74,7 +74,7 @@ function moveLaser(laser){
             }
         })
 
-        if(xPosition === 380) {
+        if(xPosition > 380) {
             laser.remove();
         } else {
             laser.style.left = `${xPosition + 8}px`
@@ -101,7 +101,7 @@ function createAlien() {
 function moveAlien(alien) {
     let moveAlienInterval = setInterval(() => {
         let xPosition = parseInt(window.getComputedStyle(alien).getPropertyValue('left'));
-        if(xPosition <= 50) {
+        if(xPosition <= 0) {
             if(Array.from(alien.classList).includes('dead-alien')) {
                 alien.remove();
             } else {
